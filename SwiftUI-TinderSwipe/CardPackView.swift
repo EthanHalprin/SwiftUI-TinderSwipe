@@ -14,22 +14,22 @@ struct CardPackView: View {
     
     var body: some View {
         ZStack {
-            CardView(width: settings.size.width,
-                     height: settings.size.height,
-                     imageName: "ethan",
-                     borderColor: Color.yellow)
+            CardView(width      : settings.size.width,
+                     height     : settings.size.height,
+                     imageName  : settings.images[0],
+                     borderColor: settings.outlineColor)
                 .offset(x: 5, y: 5)
 
-            CardView(width: settings.size.width,
-                     height: settings.size.height,
-                     imageName: "ethan",
-                     borderColor: Color.blue)
+            CardView(width      : settings.size.width,
+                     height     : settings.size.height,
+                     imageName  : settings.images[0],
+                     borderColor: settings.outlineColor)
                 .offset(x: 10, y: 10)
 
-            CardView(width: settings.size.width,
-                     height: settings.size.height,
-                     imageName: "ethan",
-                     borderColor: Color.red)
+            CardView(width      : settings.size.width,
+                     height     : settings.size.height,
+                     imageName  : settings.images[0],
+                     borderColor: settings.outlineColor)
                 .offset(x: 15, y: 15)
         }
     }
