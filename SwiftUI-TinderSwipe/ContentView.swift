@@ -13,10 +13,14 @@ struct ContentView: View {
                       height: UIScreen.main.bounds.size.height / 2.0)
     
     var body: some View {
-        CardPackView(settings: CardPackSettings(size: CGSize(width: size.width, height: size.height),
-                                                images: ["ethan"],
-                                                outlineColor: Color.blue,
-                                                isHelical: false))
+        if #available(iOS 15.0, *) {
+            CardPackView(settings: CardPackSettings(size: CGSize(width: size.width, height: size.height),
+                                                    images: ["ethan"],
+                                                    outlineColor: Color.yellow,
+                                                    isHelical: false))
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
 
