@@ -33,9 +33,19 @@ struct CardPackView: View {
                      borderColor: settings.outlineColor)
                 .offset(drag)
                 .gesture(DragGesture()
-                            .onChanged { self.drag = $0.translation }
-                            .onEnded   { _ in drag = CGSize(width: 15.0, height: 15.0) } )
-                .animation(Animation.default , value: self.drag)
+                            .onChanged {
+                                            let X = $0.translation.width
+                                            let Y = $0.translation.height
+                                            print("(\(X) ,\(Y))")
+                                            if Y > 0 {
+                                                self.drag = $0.translation
+                                            }
+                                        }
+                            .onEnded   { _ in
+                                            withAnimation {
+                                                drag = CGSize(width: 15.0, height: 15.0)
+                                            }
+                                        } )
         }
     }
 }
