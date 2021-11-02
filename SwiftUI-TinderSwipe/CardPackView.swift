@@ -11,6 +11,7 @@ import SwiftUI
 struct CardPackView: View {
     
     var settings: CardPackSettings
+    @State private var drag = CGSize(width: 15.0, height: 15.0)
     
     var body: some View {
         ZStack {
@@ -30,7 +31,11 @@ struct CardPackView: View {
                      height     : settings.size.height,
                      imageName  : settings.images[0],
                      borderColor: settings.outlineColor)
-                .offset(x: 15, y: 15)
+                .offset(drag)
+                .gesture(DragGesture()
+                            .onChanged { self.drag = $0.translation }
+                            .onEnded   { _ in drag = CGSize(width: 15.0, height: 15.0) } )
+                .animation(Animation.default , value: self.drag)
         }
     }
 }
