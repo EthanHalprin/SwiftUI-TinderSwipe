@@ -9,16 +9,18 @@ import SwiftUI
 
 struct DraggableCardView: View {
     
-    var settings: CardPackSettings
+    var size: CGSize
+    var image: String
+    var outlineColor: Color
+    @State var drag: CGSize
     @State private var isShowing = true
-    @Binding var drag: CGSize
 
     var body: some View {
         if isShowing {
-            CardView(width      : settings.size.width,
-                     height     : settings.size.height,
-                     imageName  : settings.images[0],
-                     borderColor: settings.outlineColor)
+            CardView(width      : size.width,
+                     height     : size.height,
+                     imageName  : image,
+                     borderColor: outlineColor)
                 .offset(drag)
                 .gesture(
                     DragGesture()
@@ -28,7 +30,7 @@ struct DraggableCardView: View {
                                 self.drag = $0.translation
                             }
                         }
-                        .onEnded   {
+                        .onEnded {
                             let totalXDrag = $0.translation.width > 0 ? $0.translation.width : $0.translation.width * (-1.0)
                             if totalXDrag >= UIScreen.main.bounds.width / 2.0 - 40.0 {
                                 print("DISPELL CARD !!!!!!!!!")
@@ -41,6 +43,7 @@ struct DraggableCardView: View {
         }
     }
 }
+
 
 struct CardView: View {
     
