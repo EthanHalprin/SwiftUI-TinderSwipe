@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DraggableCardView: View {
+struct CardView: View {
     
     var size: CGSize
     var image: String
@@ -33,7 +33,7 @@ struct DraggableCardView: View {
     }
 }
 
-extension DraggableCardView {
+extension CardView {
     
     func handleDrag(_ dragGesture: DragGesture.Value) {
         print("(\(dragGesture.translation.width) ,\(dragGesture.translation.height))")

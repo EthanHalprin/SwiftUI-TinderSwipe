@@ -16,10 +16,10 @@ struct CardPackView: View {
     var body: some View {
         ZStack {
             ForEach(settings.imageInfos, id: \.self) { imageInfo in
-                DraggableCardView(size: settings.size,
-                                  image: imageInfo.name,
-                                  outlineColor: Color.gray,
-                                  drag: imageInfo.drag)
+                CardView(size: settings.size,
+                         image: imageInfo.name,
+                         outlineColor: Color.gray,
+                         drag: imageInfo.drag)
             }
         }
     }

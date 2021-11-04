@@ -16,7 +16,7 @@
 		AA9E0B0827302CA800A4B84E /* SwiftUI_TinderSwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0B0727302CA800A4B84E /* SwiftUI_TinderSwipeTests.swift */; };
 		AA9E0B1227302CA800A4B84E /* SwiftUI_TinderSwipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0B1127302CA800A4B84E /* SwiftUI_TinderSwipeUITests.swift */; };
 		AA9E0B1427302CA800A4B84E /* SwiftUI_TinderSwipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0B1327302CA800A4B84E /* SwiftUI_TinderSwipeUITestsLaunchTests.swift */; };
-		AA9E0B2127302CC300A4B84E /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0B2027302CC300A4B84E /* DraggableCardView.swift */; };
+		AA9E0B2127302CC300A4B84E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0B2027302CC300A4B84E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		AA9E0B0D27302CA800A4B84E /* SwiftUI-TinderSwipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-TinderSwipeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9E0B1127302CA800A4B84E /* SwiftUI_TinderSwipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_TinderSwipeUITests.swift; sourceTree = "<group>"; };
 		AA9E0B1327302CA800A4B84E /* SwiftUI_TinderSwipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_TinderSwipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		AA9E0B2027302CC300A4B84E /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
+		AA9E0B2027302CC300A4B84E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 				AA9E0AF827302CA600A4B84E /* ContentView.swift */,
 				AA0403DD2731880F009AC4D4 /* CardPackSettings.swift */,
 				AA0403DB27318780009AC4D4 /* CardPackView.swift */,
-				AA9E0B2027302CC300A4B84E /* DraggableCardView.swift */,
+				AA9E0B2027302CC300A4B84E /* CardView.swift */,
 				AA9E0AFA27302CA700A4B84E /* Assets.xcassets */,
 				AA9E0AFC27302CA700A4B84E /* Preview Content */,
 			);
@@ -268,7 +268,7 @@
 			files = (
 				AA9E0AF927302CA600A4B84E /* ContentView.swift in Sources */,
 				AA0403DC27318780009AC4D4 /* CardPackView.swift in Sources */,
-				AA9E0B2127302CC300A4B84E /* DraggableCardView.swift in Sources */,
+				AA9E0B2127302CC300A4B84E /* CardView.swift in Sources */,
 				AA0403DE2731880F009AC4D4 /* CardPackSettings.swift in Sources */,
 				AA9E0AF727302CA600A4B84E /* SwiftUI_TinderSwipeApp.swift in Sources */,
 			);
