@@ -8,19 +8,31 @@
 import SwiftUI
 
 
-@available(iOS 15.0, *)
-struct CardPackView: View {
-    var settings: CardPackSettings
-    @State private var drag1 = CGSize(width: 5.0,  height: 5.0)
 
+class CardPackViewModel: ObservableObject {
+    @Published var images = [ImageInfo]()
+}
+
+struct CardPackView: View {
+    
+    var settings: CardPackSettings
+    @StateObject var viewModel = CardPackViewModel()
+    
     var body: some View {
         ZStack {
-            ForEach(settings.imageInfos, id: \.self) { imageInfo in
-                CardView(size: settings.size,
-                         image: imageInfo.name,
+            ForEach(viewModel.images, id: \.self) { image in
+                CardView(imageInfo: image,
                          outlineColor: Color.gray,
-                         drag: imageInfo.drag)
+                         size: settings.size,
+                         drag: image.drag,
+                         willDisappearClosure: {
+                    print("willDisappearClosure........")
+                    self.viewModel.images.insert(ImageInfo(name: "IMG_0010",
+                                                           drag: CGSize(width: 0.0, height: 0.0)), at: 0)
+                })
             }
+        }.onAppear {
+            self.viewModel.images = self.settings.imageInfos
         }
     }
 }

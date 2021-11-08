@@ -7,19 +7,21 @@
 
 import SwiftUI
 
+
 struct CardView: View {
     
-    var size: CGSize
-    var image: String
+    var imageInfo: ImageInfo
     var outlineColor: Color
+    var size: CGSize
     fileprivate let cornerRadius = 7.0
-
     @State var drag: CGSize
     @State private var isShowing = true
+    var willDisappearClosure: () -> Void
 
+    
     var body: some View {
         if isShowing {
-            Image(image)
+            Image(imageInfo.name)
                 .resizable()
                 .scaledToFit()
                 .border(outlineColor, width: 4)
@@ -36,7 +38,7 @@ struct CardView: View {
 extension CardView {
     
     func handleDrag(_ dragGesture: DragGesture.Value) {
-        print("(\(dragGesture.translation.width) ,\(dragGesture.translation.height))")
+        print("Drag (\(dragGesture.translation.width) ,\(dragGesture.translation.height))")
         if dragGesture.translation.height > 0 {
             self.drag = dragGesture.translation
         }
@@ -45,7 +47,8 @@ extension CardView {
     func handleEnd(_ dragGesture: DragGesture.Value) {
         let totalXDrag = dragGesture.translation.width > 0 ? dragGesture.translation.width : dragGesture.translation.width * (-1.0)
         if totalXDrag >= UIScreen.main.bounds.width / 2.0 - 40.0 {
-            print("DISPELL CARD !!!!!!!!!")
+            print("Card Disappearing...")
+            willDisappearClosure()
             isShowing = false
         } else {
             withAnimation { drag = CGSize(width: 15.0, height: 15.0) }
