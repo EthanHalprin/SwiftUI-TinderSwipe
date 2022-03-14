@@ -1,3 +1,3 @@
 # SwiftUI-TinderSwipe
 
-Do that cool swipe of Tinder App
+Swip stack of pictures to the left & right similar to Tinder do
